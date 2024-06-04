@@ -105,6 +105,8 @@ class SC300(object):
     
     def moveto(self, axis, pos):
         l=pos-self.getPosition(axis)
+        if l==0:
+            return self.getPosition(axis)
         return self.move(axis,l)
     
     def getPosition(self, axis):
